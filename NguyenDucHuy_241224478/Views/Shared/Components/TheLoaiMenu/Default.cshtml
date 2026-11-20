@@ -1,0 +1,12 @@
+﻿@model IEnumerable<NguyenDucHuy_241224478.Models.TheLoai>
+
+<ul class="menu">
+    <li class="active"><a href="/">Nguyễn Đức Huy</a></li>
+    @foreach (var tl in Model)
+    {
+        <li>
+            <a href="#" class="js-theloai"
+               data-url="@Url.Action("SachTheoTheLoai", "Home", new { id = tl.MaTl })">@tl.TenTl</a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,33 @@
+﻿@model NguyenDucHuy_241224478.Models.DanhSachSachVM
+<div id="main-content">
+<div class="section-head">
+    <h3>@Model.TieuDe</h3>
+
+    <a asp-controller="Sach" asp-action="Create">
+        + Thêm sách mới
+    </a>
+</div>
+
+<div class="grid">
+    @foreach (var s in Model.Sachs)
+    {
+        <div class="book-card">
+            <a href="#">
+                <img src="~/images/@s.Anh" alt="@s.TenSach" />
+            </a>
+
+            <h2>@s.TenSach</h2>
+
+            <div class="book-foot">
+                <span class="price">
+                    @(s.Gia?.ToString("0"))
+                </span>
+
+                <button class="btn-buy">
+                    Thêm vào giỏ
+                </button>
+            </div>
+        </div>
+    }
+</div>
+</div>
